@@ -19,12 +19,24 @@
         ];
 
         Console.WriteLine($"Number of items in the collection: {data.Length}");
-        Console.WriteLine($"Number of duplicates : {CountDuplicates(data)}");
+        Console.WriteLine($"Number of duplicates: {CountDuplicates(data)}");
     }
 
     private static int CountDuplicates(int[] data)
     {
-        // Add code here.
-        return 0;
+        var uniqueValues = new HashSet<int>();
+        var duplicatesAmount = 0;
+        foreach (var value in data)
+        {
+            if (uniqueValues.Contains(value))
+            {
+                duplicatesAmount++;
+            }
+            else
+            {
+                uniqueValues.Add(value);
+            }
+        }
+        return duplicatesAmount;
     }
 }
