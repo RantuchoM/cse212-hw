@@ -178,7 +178,7 @@ public static class SetsAndMaps
         foreach (var feature in featureCollection.Features)
         {
             // Example: "Magnitude: 4.5, Location: California"
-            var description = $"Location : {feature.Properties.Place} - Mag : {feature.Properties.Mag}";
+            var description = $"{feature.Properties.Place} - Mag {feature.Properties.Mag}";
             resultArray.Add(description);
         }
         // 3. Return an array of these string descriptions.
